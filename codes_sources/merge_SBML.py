@@ -28,8 +28,8 @@ def get_Id_organism(model):
 # def get_ListOfFunctionDefinitions(model):
 #   return ListOfFunctionDefinitions
 
-# def get_ListOfUnitDefinitions(model):
-#   return ListOfUnitDefinitions
+def get_ListOfUnitDefinitions(model):
+  return model.getListOfUnitDefinitions()
 
 # def get_ListOfCompartments(model):
 #   return ListOfCompartments
