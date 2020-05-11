@@ -14,13 +14,14 @@ def read_sbml(file):
         return document
       
 def get_model(document):
-  model = document.getModel()
+  model = libsbml.SBase.getModel(document)
   return model
 
 ## Step 2 : Define Id for one organism
 
-# def get_Id_organism(model):
-#    return Id
+def get_Id_organism(model):
+  Id = libsbml.SBase.getId(model)
+  return Id
 
 ## Step 3 :  Get each object
 
