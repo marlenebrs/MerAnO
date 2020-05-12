@@ -37,8 +37,8 @@ def get_ListOfCompartments(model):
     return ListOfCompartments
 
 def get_listOfSpecies(model):
-  ListofSpecies = libsbml.SBase.getlistOfSpecies
-  return listOfSpecies
+  ListOfSpecies = model.getListOfSpecies()
+  return ListOfSpecies
 
 # def get_ListOfParameters(model):
 #   return ListOfParameters
