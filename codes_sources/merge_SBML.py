@@ -50,6 +50,19 @@ def get_ListOfReactions(model):
 
 ## Step 4 : Modify Id in a model
 
+def shorten_Id(Id):
+  IdList = Id.split("_")
+  Id = IdList[-1]
+  return Id
+
+def set_ReactionsIds(ListOfReactions, ShortIdOrganism):
+  for reaction in ListOfReactions:
+    id = reaction.getIdAttribute()
+    newId = id+"_"+ShortIdOrganism
+    reaction.setIdAttribute(newId)
+  return ListOfReactions
+
+  
 # def modify_Id(model):
 #   return model
 
