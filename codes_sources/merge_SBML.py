@@ -32,8 +32,9 @@ def get_ListOfFunctionDefinitions(model):
 def get_ListOfUnitDefinitions(model):
   return model.getListOfUnitDefinitions()
 
-# def get_ListOfCompartments(model):
-#   return ListOfCompartments
+def get_ListOfCompartments(model):
+    ListOfCompartments = model.getListOfCompartments()
+    return ListOfCompartments
 
 def get_listOfSpecies(model):
   ListofSpecies = libsbml.SBase.getlistOfSpecies
