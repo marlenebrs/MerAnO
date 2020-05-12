@@ -55,12 +55,19 @@ def shorten_Id(Id):
   Id = IdList[-1]
   return Id
 
-def set_ReactionsIds(ListOfReactions, ShortIdOrganism):
-  for reaction in ListOfReactions:
-    id = reaction.getIdAttribute()
+def set_UnitDefinitionIds(ListOfUnitDefinitions, ShortIdOrganism):
+  for unitDefinition in ListOfUnitDefinitions:
+    id = unitDefinition.getIdAttribute()
     newId = id+"_"+ShortIdOrganism
-    reaction.setIdAttribute(newId)
-  return ListOfReactions
+    unitDefinition.setIdAttribute(newId)
+  return ListOfUnitDefinitions
+
+def set_CompartmentIds(ListOfCompartments, ShortIdOrganism):
+  for compartment in ListOfCompartments:
+    id = compartment.getIdAttribute()
+    newId = id+"_"+ShortIdOrganism
+    compartment.setIdAttribute(newId)
+  return ListOfCompartments
 
 def set_SpeciesIds(ListOfSpecies, ShortIdOrganism):
   for species in ListOfSpecies:
@@ -76,19 +83,12 @@ def set_ParameterIds(ListOfParameters, ShortIdOrganism):
     parameter.setIdAttribute(newId)
   return ListOfParameters
 
-def set_UnitDefinitionIds(ListOfUnitDefinitions, ShortIdOrganism):
-  for unitDefinition in ListOfUnitDefinitions:
-    id = unitDefinition.getIdAttribute()
+def set_ReactionsIds(ListOfReactions, ShortIdOrganism):
+  for reaction in ListOfReactions:
+    id = reaction.getIdAttribute()
     newId = id+"_"+ShortIdOrganism
-    unitDefinition.setIdAttribute(newId)
-  return ListOfUnitDefinitions
-
-def set_CompartmentIds(ListOfCompartments, ShortIdOrganism):
-  for compartment in ListOfCompartments:
-    id = compartment.getIdAttribute()
-    newId = id+"_"+ShortIdOrganism
-    compartment.setIdAttribute(newId)
-  return ListOfCompartments
+    reaction.setIdAttribute(newId)
+  return ListOfReactions
 
 # def modify_Id(model):
 #   return model
