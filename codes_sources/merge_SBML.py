@@ -43,8 +43,9 @@ def get_listOfSpecies(model):
 # def get_ListOfParameters(model):
 #   return ListOfParameters
 
-# def get_ListOfReactions(model):
-#   return ListOfReactions
+def get_ListOfReactions(model):
+    ListOfReactions = model.getListOfReactions()
+    return ListOfReactions
 
 ## Step 4 : Modify Id in a model
 
