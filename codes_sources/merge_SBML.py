@@ -62,7 +62,34 @@ def set_ReactionsIds(ListOfReactions, ShortIdOrganism):
     reaction.setIdAttribute(newId)
   return ListOfReactions
 
-  
+def set_SpeciesIds(ListOfSpecies, ShortIdOrganism):
+  for species in ListOfSpecies:
+    id = species.getIdAttribute()
+    newId = id+"_"+ShortIdOrganism
+    species.setIdAttribute(newId)
+  return ListOfSpecies
+
+def set_ParameterIds(ListOfParameters, ShortIdOrganism):
+  for parameter in ListOfParameters:
+    id = parameter.getIdAttribute()
+    newId = id+"_"+ShortIdOrganism
+    parameter.setIdAttribute(newId)
+  return ListOfParameters
+
+def set_UnitDefinitionIds(ListOfUnitDefinitions, ShortIdOrganism):
+  for unitDefinition in ListOfUnitDefinitions:
+    id = unitDefinition.getIdAttribute()
+    newId = id+"_"+ShortIdOrganism
+    unitDefinition.setIdAttribute(newId)
+  return ListOfUnitDefinitions
+
+def set_CompartmentIds(ListOfCompartments, ShortIdOrganism):
+  for compartment in ListOfCompartments:
+    id = compartment.getIdAttribute()
+    newId = id+"_"+ShortIdOrganism
+    compartment.setIdAttribute(newId)
+  return ListOfCompartments
+
 # def modify_Id(model):
 #   return model
 
