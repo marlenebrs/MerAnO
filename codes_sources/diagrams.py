@@ -119,3 +119,11 @@ list_medium_module()
 
 ############################# 6 - Fonction qui va créer un dictionnaire qui va contenir en clé le nom de chaque pathway module associé au nombre de molécules impliquées (nombre de fois où on dénombre le pathway module dans la liste data)  #############################
 
+def make_dict():
+    l=list_medium_module()
+    compte={}.fromkeys(l,0)
+    for valeur in l:
+        compte[valeur]+=1
+    print (compte)
+
+make_dict()
