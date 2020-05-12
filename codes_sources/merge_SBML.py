@@ -40,8 +40,9 @@ def get_listOfSpecies(model):
   ListOfSpecies = model.getListOfSpecies()
   return ListOfSpecies
 
-# def get_ListOfParameters(model):
-#   return ListOfParameters
+def get_ListOfParameters(model):
+  ListOfParameters = model.getListOfParameters()
+  return ListOfParameters
 
 def get_ListOfReactions(model):
     ListOfReactions = model.getListOfReactions()
