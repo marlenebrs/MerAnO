@@ -14,19 +14,19 @@ def read_sbml(file):
       return document
       
 def get_model(document):
-  model = libsbml.SBase.getModel(document)
+  model = document.getModel()
   return model
 
 ## Step 2 : Define Id for one organism
 
 def get_Id_organism(model):
-  Id = libsbml.SBase.getId(model)
+  Id = model.getId()
   return Id
 
 ## Step 3 :  Get each object
 
 def get_ListOfFunctionDefinitions(model):
-  ListOfFunctionDefinitions = libsbml.SBase.getListOfFunctionDefinitions
+  ListOfFunctionDefinitions = model.getListOfFunctionDefinitions()
   return ListOfFunctionDefinitions
 
 def get_ListOfUnitDefinitions(model):
