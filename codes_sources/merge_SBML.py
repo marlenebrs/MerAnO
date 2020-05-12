@@ -6,12 +6,12 @@ def read_sbml(file):
   """
   return model of SBML file 
   """
-    document = libsbml.readSBML(file)
-    if document.getNumErrors() > 0:
-        print("Encountered the following SBML errors:" + "\n")
-        document.printErrors()
-    else:       
-        return document
+  document = libsbml.readSBML(file)
+  if document.getNumErrors() > 0:
+    print("Encountered the following SBML errors:" + "\n")
+    document.printErrors()
+    else:
+      return document
       
 def get_model(document):
   model = libsbml.SBase.getModel(document)
@@ -25,8 +25,9 @@ def get_Id_organism(model):
 
 ## Step 3 :  Get each object
 
-# def get_ListOfFunctionDefinitions(model):
-#   return ListOfFunctionDefinitions
+def get_ListOfFunctionDefinitions(model):
+  ListOfFunctionDefinitions = libsbml.SBase.getListOfFunctionDefinitions
+  return ListOfFunctionDefinitions
 
 def get_ListOfUnitDefinitions(model):
   return model.getListOfUnitDefinitions()
@@ -34,8 +35,9 @@ def get_ListOfUnitDefinitions(model):
 # def get_ListOfCompartments(model):
 #   return ListOfCompartments
 
-# def get_listOfSpecies(model):
-#   return listOfSpecies
+def get_listOfSpecies(model):
+  ListofSpecies = libsbml.SBase.getlistOfSpecies
+  return listOfSpecies
 
 # def get_ListOfParameters(model):
 #   return ListOfParameters
