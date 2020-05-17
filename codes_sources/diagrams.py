@@ -9,7 +9,7 @@ import json
 # Excel file
 #myFile = '/Users/marlenebarus/Master1/Semestre8/PdP/eggnog/Lactobacillus/query_seqs.fa.emapper.annotations'
 
-############################# 1 - Generate the modules list present within the annotation file #############################
+############################# 1 - Generates the modules list present within the annotation file #############################
 def list_modules(fichier_annotations):
     csv = pd.read_csv(fichier_annotations, sep="\t", header=3, usecols=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16])
 
@@ -23,7 +23,7 @@ def list_modules(fichier_annotations):
 
     return modules
 
-############################# 2 - Verify if the modules are in the JSON file : check_json(module)#############################
+############################# 2 - Verifies if the modules are in the JSON file : check_json(module)#############################
 
 def check_json(id):
     new=open('modules.json')
