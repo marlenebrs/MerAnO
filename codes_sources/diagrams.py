@@ -9,21 +9,21 @@ import json
 # Excel file
 #myFile = '/Users/marlenebarus/Master1/Semestre8/PdP/eggnog/Lactobacillus/query_seqs.fa.emapper.annotations'
 
-############################# 1 - Génère la liste des modules présent dans un fichier d'annotations #############################
+############################# 1 - Generate the modules list present within the annotation file #############################
 def list_modules(fichier_annotations):
     csv = pd.read_csv(fichier_annotations, sep="\t", header=3, usecols=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16])
 
     modules = []
     for i in range(len(csv)):
-        temp = csv['KEGG_Module'][i]                          # stocke le contenu de chaque case de la colonne 'KEGG_Module' dans une variable temporaire
-        if not pd.isnull(temp):                               # Si la valeur est différente de "NaN"
-            value = str(csv['KEGG_Module'][i]).split(",")     # Pour les cases composées de plusieurs id de modules -> coupe au niveau de la virgule et stocke dans une liste
+        temp = csv['KEGG_Module'][i]                          # stores each cell content of the 'KEGG_Module' column into a temporary variable
+        if not pd.isnull(temp):                               # If the value is different of "NaN"
+            value = str(csv['KEGG_Module'][i]).split(",")     # For the cells composed of different modules id -> split at the comma and stores them in a list
             for word in value:
                 modules.append(word)
 
     return modules
 
-############################# 2 - On vérifie si les modules sont présents dans le fichier JSON : check_json(module) #############################
+############################# 2 - Verify if the modules are in the JSON file : check_json(module)#############################
 
 def check_json(id):
     new=open('modules.json')
@@ -35,7 +35,7 @@ def check_json(id):
             path=load[l].get('medium')
             return (path)
 
-############################# 3 - Création de la fonction qui va mettre à jour le fichier JSON : update_json(dict_module) #############################
+############################# 3 - Creation of the update JSON function : update_json(dict_module) #############################
 def write_json(data):
     with open("modules.json", mode='w') as f:
         json.dump(data, f, indent=4)
@@ -55,14 +55,14 @@ def update_json(liste):
     write_json(data)
 
 
-############################# 4 - Si pas dans JSON alors on requête KEGG : request_kegg(module) et read_text(text) #############################
+############################# 4 - If not in JSON file, requests KEGG : request_kegg(module) et read_text(text) #############################
 
-def request_kegg(module):         # Va retourner la page descriptive du module
+def request_kegg(module):         # Returns the information page about the module
     r = requests.get('http://rest.kegg.jp/get/%s' % module)
     description = r.text
     return description
 
-def read_text(module,text):           # Va retourner la liste de la hiérarchie des pathway Modules, pour un module en particulier, présente dans la section CLASS
+def read_text(module,text):           # Returns the hierarchy Pathway Modules list for one particular module present in the CLASS section
     t = text.split("\n")
     value = str
     name = str
@@ -85,7 +85,7 @@ def read_text(module,text):           # Va retourner la liste de la hiérarchie 
     return value
 
 
-############################# 5 - Fonction qui va créer une liste générale "data" qui va contenir les tous "medium" pathway modules #############################
+############################# 5 - Creates a general list "data" containing all the "medium" pathway modules #############################
 
 
 def list_medium_module():
@@ -117,11 +117,11 @@ def list_medium_module():
 list_medium_module()
 
 
-############################# 6 - Fonction qui va créer un dictionnaire qui va contenir en clé le nom de chaque pathway module associé au nombre de molécules impliquées (nombre de fois où on dénombre le pathway module dans la liste data)  #############################
+############################# 6 - Creates a dictionary containing as keys the name of each pathway module and as values the occurence of each module in the "data" list #############################
 
 def make_dict():
     l=list_medium_module()
-    compte={}.fromkeys(l,0)
+    compte={}.fromkeys(l,0) #l is for the list and 0 initiate all the keys values
     for valeur in l:
         compte[valeur]+=1
     print (compte)
