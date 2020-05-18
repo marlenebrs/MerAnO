@@ -95,15 +95,37 @@ def set_ReactionsIds(ListOfReactions, ShortIdOrganism):
 
 ## Step 5 : Create new SBML to merge all documents
 
-# Object
-# ListOfFunctionDefinitions, 
-# ListOfUnitDefinitions, 
-# ListOfCompartments, 
-# ListOfSpecies, 
-# ListOfParameters, 
-# ListOfInitialAssignments, 
-# ListOfRules, 
-# ListOfConstraints, 
-# ListOfReactions,
-# ListOfEvents.
-#
+from libsbml import *
+
+document=SBMLDocument(3,1)
+
+model=document.createModel("Projet")
+
+
+def create_Definition():
+    definition = model.createDefinition()
+    definition = ListOfFunctionDefinitions
+    definition = ListOfUnitDefinitions
+    return create_Definition
+
+def create_Compartment():
+    compartment = model.createCompartment()
+    compartment = ListOfCompartments
+    return create_Compartment
+
+def create_Species():
+    species = model.createSpecies()
+    species = ListOfSpecies
+    return create_Species
+
+def create_Parameters():
+    parameters = model.createParameters()
+    parameters = ListOfParameters
+    return create_Parameters
+
+def create_Reactions():
+    reaction = model.createReaction()
+    reaction = ListOfReactions
+    return create_Reactions
+
+writeSBML(document,"projet.xml")
