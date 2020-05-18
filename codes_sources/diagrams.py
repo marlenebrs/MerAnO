@@ -127,3 +127,25 @@ def make_dict():
     print (compte)
 
 make_dict()
+
+############################# 7 - Creating the plots from the collected data #############################
+
+def make_barplot(data):
+   names = list(data.keys())
+   values = list(data.values())
+   plt.bar(range(len(data)),values,tick_label=names)
+   plt.title('Division of metabolisms within the bacteria')
+   #plt.savefig('bar.png')
+   plt.show()
+
+def make_pie(data):
+    names=list(data.keys())
+    values=list(data.values())
+    fig, ax = plt.subplots()
+    ax.pie(values, autopct='%1.1f%%')
+    ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
+    ax.set_title('Division of metabolisms within the bacteria')
+    plt.show()
+    
+make_barplot(data)
+make_pie(data)
