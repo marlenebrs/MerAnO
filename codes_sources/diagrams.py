@@ -133,9 +133,11 @@ make_dict()
 def make_barplot(data):
    names = list(data.keys())
    values = list(data.values())
-   plt.bar(range(len(data)),values,tick_label=names)
    plt.title('Division of metabolisms within the bacteria')
-   #plt.savefig('bar.png')
+   y_pos = np.arange(len(names))
+   plt.barh(y_pos, values)
+   plt.yticks(y_pos, names)
+   plt.tight_layout()
    plt.show()
 
 def make_pie(data):
@@ -145,6 +147,7 @@ def make_pie(data):
     ax.pie(values, autopct='%1.1f%%')
     ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
     ax.set_title('Division of metabolisms within the bacteria')
+    plt.legend(names, bbox_to_anchor=(1,0), loc="lower right", bbox_transform=plt.gcf().transFigure)
     plt.show()
     
 make_barplot(data)
