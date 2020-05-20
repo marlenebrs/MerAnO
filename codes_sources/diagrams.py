@@ -1,13 +1,11 @@
 import requests
 import pandas as pd
 import numpy as np
-# To install pandas: conda install pandas
 import pylab as plt
 import json
 
 
-# Excel file
-#myFile = '/Users/marlenebarus/Master1/Semestre8/PdP/eggnog/Lactobacillus/query_seqs.fa.emapper.annotations'
+## myFiles=["/Samples/Annotation_files/Bacteroides_fragilis_YCH46.annotations", "/Samples/Annotation_files/Enterococcus_faecalis_V583.annotations","/Samples/Annotation_files/Lactobacillus_plantarum_WCFS1.annotations"]
 
 ############################# 1 - Generates the modules list present within the annotation file #############################
 def list_modules(fichier_annotations):
