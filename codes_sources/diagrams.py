@@ -129,23 +129,33 @@ make_dict()
 ############################# 7 - Creating the plots from the collected data #############################
 
 def make_barplot(data):
-   names = list(data.keys())
-   values = list(data.values())
-   plt.title('Division of metabolisms within the bacteria')
-   y_pos = np.arange(len(names))
-   plt.barh(y_pos, values)
-   plt.yticks(y_pos, names)
-   plt.tight_layout()
-   plt.show()
-
+    for dat in range (0,len(data)):
+        names = list(data[dat].keys())
+        values = list(data[dat].values())
+        y_pos = np.arange(len(names))
+        width=0.3
+        if dat==0:
+            plt.barh(y_pos-width,values,width)
+        elif dat==1:
+            plt.barh(y_pos,values,width)
+        elif dat>1:
+            plt.barh(y_pos+width,values,width)
+    plt.yticks(y_pos, names)
+    plt.title('Division of metabolisms within the bacteria')
+    plt.xlabel("Number of times the metabolisms appear in the bacteria")
+    plt.tight_layout()
+    plt.show()
+    
+ 
 def make_pie(data):
-    names=list(data.keys())
-    values=list(data.values())
-    fig, ax = plt.subplots()
-    ax.pie(values, autopct='%1.1f%%')
-    ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
+    names=np.array(list(data.keys()))
+    values=np.array(list(data.values()))
+    fig, ax=plt.subplots(subplot_kw=dict(aspect='equal')) # Equal aspect ratio ensures the pie chart is circular.
+    plt.pie(values)
+    percent = 100.*values/sum(values)
+    labels = ['{0} - {1:1.2f} %'.format(v,n) for v,n in zip(names, percent)]
     ax.set_title('Division of metabolisms within the bacteria')
-    plt.legend(names, bbox_to_anchor=(1,0), loc="lower right", bbox_transform=plt.gcf().transFigure)
+    plt.legend(labels, bbox_to_anchor=(1,0), loc="lower right", bbox_transform=plt.gcf().transFigure)
     plt.show()
     
 make_barplot(data)
