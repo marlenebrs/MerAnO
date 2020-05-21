@@ -47,6 +47,14 @@ def get_ListOfParameters(model):
 def get_ListOfReactions(model):
     ListOfReactions = model.getListOfReactions()
     return ListOfReactions
+  
+def get_ListOfReactants(model):
+    ListOfReactants = model.getListOfReactants()
+    return ListOfReactants
+
+def get_ListOfProduits(model):
+    ListOfProduits = model.getListOfProduits()
+    return ListOfProduits
 
 ## Step 4 : Modify Id in a model
 
