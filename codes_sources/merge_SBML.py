@@ -52,9 +52,9 @@ def get_ListOfReactants(model):
     ListOfReactants = model.getListOfReactants()
     return ListOfReactants
 
-def get_ListOfProduits(model):
-    ListOfProduits = model.getListOfProduits()
-    return ListOfProduits
+def get_ListOfProducts(model):
+    ListOfProducts = model.getListOfProducts()
+    return ListOfProducts
 
 ## Step 4 : Modify Id in a model
 
