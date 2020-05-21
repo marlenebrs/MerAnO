@@ -109,8 +109,20 @@ def modify_Id(model):
 
 from libsbml import *
 
-document=SBMLDocument(3,1)
+def get_SBMLdoc_from_folder():
+  folder_path = './Samples/SBML_files'
+  fileList = []
+  for filename in os.listdir(folder_path):
+    fileList.append(filename)
+  return fileList
 
-model=document.createModel("Projet")
-
-writeSBML(document,"projet.xml")
+def main_sbml(fileList):
+  document=SBMLDocument(3,1)
+  model = document.createModel("merged_file")
+  for filename in fileList:
+    file = read_sbml(filename)
+    fileModel = get_model(file)
+    fileModel = modify_Id(fileModel)
+    model.appendFrom(fileModel)
+    print(get_Id_organism(fileModel))
+  writeSBML(document, "merged_sbml.xml")
