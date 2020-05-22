@@ -1,4 +1,5 @@
 import libsbml
+import os
 
 ### Step 1 : Get document and model
 
@@ -33,8 +34,8 @@ def get_ListOfUnitDefinitions(model):
   return model.getListOfUnitDefinitions()
 
 def get_ListOfCompartments(model):
-    ListOfCompartments = model.getListOfCompartments()
-    return ListOfCompartments
+  ListOfCompartments = model.getListOfCompartments()
+  return ListOfCompartments
 
 def get_listOfSpecies(model):
   ListOfSpecies = model.getListOfSpecies()
@@ -45,16 +46,16 @@ def get_ListOfParameters(model):
   return ListOfParameters
 
 def get_ListOfReactions(model):
-    ListOfReactions = model.getListOfReactions()
-    return ListOfReactions
+  ListOfReactions = model.getListOfReactions()
+  return ListOfReactions
   
 def get_ListOfReactants(model):
-    ListOfReactants = model.getListOfReactants()
-    return ListOfReactants
+  ListOfReactants = model.getListOfReactants()
+  return ListOfReactants
 
-def get_ListOfProduits(model):
-    ListOfProduits = model.getListOfProduits()
-    return ListOfProduits
+def get_ListOfProducts(model):
+  ListOfProducts = model.getListOfProducts()
+  return ListOfProducts
 
 ## Step 4 : Modify Id in a model
 
@@ -134,3 +135,5 @@ def main_sbml(fileList):
     model.appendFrom(fileModel)
     print(get_Id_organism(fileModel))
   writeSBML(document, "merged_sbml.xml")
+
+main_sbml(get_SBMLdoc_from_folder())
