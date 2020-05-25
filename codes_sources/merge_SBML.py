@@ -11,8 +11,8 @@ def read_sbml(file):
   if document.getNumErrors() > 0:
     print("Encountered the following SBML errors:" + "\n")
     document.printErrors()
-    else:
-      return document
+  else:
+    return document
       
 def get_model(document):
   model = document.getModel()
