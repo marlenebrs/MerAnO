@@ -27,7 +27,7 @@ def test_get_SBMLdoc_from_folder():
       
 def test_annotation():
     dict = {'Bacteroides_fragilis_YCH46': {'Carbohydrate metabolism': 8, 'Metabolism of cofactors and vitamins': 4, 'Energy metabolism': 2, 'Amino acid metabolism': 5}, 'Enterococcus_faecalis_V583': {'Nucleotide metabolism': 2, 'Gene set': 1, 'Amino acid metabolism': 5, 'Metabolism of cofactors and vitamins': 2, 'Biosynthesis of terpenoids and polyketides': 2}, 'Lactobacillus_plantarum_WCFS1': {'Amino acid metabolism': 2, 'Carbohydrate metabolism': 6, 'Metabolism of cofactors and vitamins': 5, 'Energy metabolism': 2, 'Lipid metabolism': 1, 'Nucleotide metabolism': 1, 'Gene set': 1}}
-    files=(['~/Desktop/projet/test/merano/Bacteroides_fragilis_YCH46.annotations', '~/Desktop/projet/test/merano/Enterococcus_faecalis_V583.annotations','~/Desktop/projet/test/merano/Lactobacillus_plantarum_WCFS1.annotations'])
+    files=(['../merano/Samples/Annotation_files/Bacteroides_fragilis_YCH46.annotations', '../merano/Samples/Annotation_files/Enterococcus_faecalis_V583.annotations','../merano/Samples/Annotation_files/Lactobacillus_plantarum_WCFS1.annotations'])
     data={}
     for f in files :
         data[get_name_org(f)] = make_dict(f)
