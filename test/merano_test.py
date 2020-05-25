@@ -5,7 +5,7 @@
 import subprocess
 import unittest
 
-from merano import main_SBML, get_SBMLdoc_from_folder
+from merano import all
 from merano import main_analysis
 
 def test_filetype(filename, filetype):
