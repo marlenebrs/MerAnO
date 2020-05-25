@@ -54,8 +54,13 @@ def get_ListOfReactants(model):
   return ListOfReactants
 
 def get_ListOfProducts(model):
+<<<<<<< HEAD:codes_sources/merge_SBML.py
   ListOfProducts = model.getListOfProducts()
   return ListOfProducts
+=======
+    ListOfProducts = model.getListOfProducts()
+    return ListOfProducts
+>>>>>>> 30710556c14a7fe43cddaf315f33bc6972472d8a:merano/merge_SBML.py
 
 ## Step 4 : Modify Id in a model
 
