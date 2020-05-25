@@ -7,8 +7,8 @@ import unittest
 
 from merano import all
 from merano import main_analysis
-from merano.annotation import make_dict
-from merano.annotation import get_name_org
+from merano import make_dict
+from merano import get_name_org
 
 def test_filetype(filename, filetype):
   filename = filename.split('.')
