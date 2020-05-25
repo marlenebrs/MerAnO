@@ -5,7 +5,7 @@
 import subprocess
 import unittest
 
-from merano import all
+from merano import main_SBML, get_SBMLdoc_from_folder
 from merano import main_analysis
 from merano import make_dict
 from merano import get_name_org
