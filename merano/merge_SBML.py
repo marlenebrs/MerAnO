@@ -1,18 +1,17 @@
 import libsbml
-import os
 
 ### Step 1 : Get document and model
 
 def read_sbml(file):
-  """
+    """
   return model of SBML file 
-  """
-  document = libsbml.readSBML(file)
-  if document.getNumErrors() > 0:
-    print("Encountered the following SBML errors:" + "\n")
-    document.printErrors()
-  else:
-    return document
+    """
+    document = libsbml.readSBML(file)
+    if document.getNumErrors() > 0:
+        print("Encountered the following SBML errors:" + "\n")
+        document.printErrors()
+    else:
+        return document
       
 def get_model(document):
   model = document.getModel()
@@ -34,8 +33,8 @@ def get_ListOfUnitDefinitions(model):
   return model.getListOfUnitDefinitions()
 
 def get_ListOfCompartments(model):
-  ListOfCompartments = model.getListOfCompartments()
-  return ListOfCompartments
+    ListOfCompartments = model.getListOfCompartments()
+    return ListOfCompartments
 
 def get_listOfSpecies(model):
   ListOfSpecies = model.getListOfSpecies()
@@ -46,21 +45,16 @@ def get_ListOfParameters(model):
   return ListOfParameters
 
 def get_ListOfReactions(model):
-  ListOfReactions = model.getListOfReactions()
-  return ListOfReactions
+    ListOfReactions = model.getListOfReactions()
+    return ListOfReactions
   
 def get_ListOfReactants(model):
-  ListOfReactants = model.getListOfReactants()
-  return ListOfReactants
+    ListOfReactants = model.getListOfReactants()
+    return ListOfReactants
 
 def get_ListOfProducts(model):
-<<<<<<< HEAD:codes_sources/merge_SBML.py
-  ListOfProducts = model.getListOfProducts()
-  return ListOfProducts
-=======
     ListOfProducts = model.getListOfProducts()
     return ListOfProducts
->>>>>>> 30710556c14a7fe43cddaf315f33bc6972472d8a:merano/merge_SBML.py
 
 ## Step 4 : Modify Id in a model
 
@@ -131,6 +125,8 @@ def get_SBMLdoc_from_folder():
   return fileList
 
 def main_sbml(fileList):
+  print("Execution in progress ...")
+  
   document=SBMLDocument(3,1)
   model = document.createModel("merged_file")
   for filename in fileList:
@@ -138,7 +134,6 @@ def main_sbml(fileList):
     fileModel = get_model(file)
     fileModel = modify_Id(fileModel)
     model.appendFrom(fileModel)
-    print(get_Id_organism(fileModel))
-  writeSBML(document, "merged_sbml.xml")
+  writeSBML(document, "Results/merged_sbml.xml")
 
-main_sbml(get_SBMLdoc_from_folder())
+
