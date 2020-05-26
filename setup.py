@@ -8,7 +8,7 @@ def readme():
 
 
 setup(
-    name="PROJET_CPRD",
+    name="MerAnO",
     version=merano.__version__,
     description="Merge SBML file and analyze metabolic patways.",
     long_description=readme(),
