@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
-from data_processing import *
+from data_processing import*
 from request_database import make_dict
 from diagrams import*
 from createPDF import create_pdf
