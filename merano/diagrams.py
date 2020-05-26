@@ -16,13 +16,15 @@ def make_multiple_barplot(modules,label,value):
     """
     Make multiple barplot
 
-    args:
-        modules (list): modules' name
-        label (list) : organism's name
-        value (list) :values for each modules for each organism
+    :param modules: modules' name
+    :type modules: list
+    :param label: organism's name
+    :type label: list
+    :param value: values for each modules for each organism
+    :type value: list
 
-    return:
-        list [name,description]
+    :return: name and description of chart
+    :rtype: list
     """
     x=np.arange(len(modules))
     width=0.8
@@ -55,13 +57,15 @@ def make_barplot(modules,label,value):
     """
     Make barplot
 
-    args:
-        modules (list): modules' name
-        label (list) : organism's name
-        value (list) :values for each modules for one organism
+    :param modules: modules' name
+    :type modules: list
+    :param label: organism's name
+    :type label: list
+    :param value: values for each modules for one organism
+    :type value: list
 
-    return:
-        list [name,description]
+    :return: name and description of chart
+    :rtype: list
     """
     x=np.arange(len(modules))
     width=0.8
@@ -88,13 +92,15 @@ def make_pie(module,label,value):
     """
     Make pie
 
-    args:
-        modules (list): modules' name
-        label (list) : organism's name
-        value (list) :values for each modules for one organism
+    :param modules: modules' name
+    :type modules: list
+    :param label: organism's name
+    :type label: list
+    :param value: values for each modules for one organism
+    :type value: list
 
-    return:
-        list [name,description]
+    :return: name and description of chart
+    :rtype: list
     """
     modules=np.array(module)
     values=np.array(value)
