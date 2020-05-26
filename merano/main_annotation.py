@@ -20,8 +20,8 @@ def main_analysis(files):
     """
     run analyses part
 
-    Args:
-        files (list) : files to process
+    :param files: files to process
+    :type files: list
     """
     print("Execution in progress...Can take more than 10 minutes")
     data={}
