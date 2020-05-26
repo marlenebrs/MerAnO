@@ -1,4 +1,5 @@
 import libsbml
+import sys
 
 ### Step 1 : Get document and model
 
@@ -8,14 +9,15 @@ def read_sbml(file):
     """
     document = libsbml.readSBML(file)
     if document.getNumErrors() > 0:
-        print("Encountered the following SBML errors:" + "\n")
-        document.printErrors()
+      print("ERROR : \"", file, '\" is not SBML file')
+      document.printErrors()
+      sys.exit()
     else:
-        return document
+      return document
       
 def get_model(document):
-  model = document.getModel()
-  return model
+    model = document.getModel()
+    return model
 
 ## Step 2 : Define Id for one organism
 
@@ -116,13 +118,6 @@ def modify_Id(model):
 ## Step 5 : Create new SBML to merge all documents
 
 from libsbml import *
-
-def get_SBMLdoc_from_folder():
-  folder_path = './Samples/SBML_files'
-  fileList = []
-  for filename in os.listdir(folder_path):
-    fileList.append(filename)
-  return fileList
 
 def main_sbml(fileList):
   print("Execution in progress ...")
