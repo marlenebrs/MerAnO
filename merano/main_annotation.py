@@ -30,7 +30,7 @@ def main_analysis(files):
         
 
     info=[]         # list with path and description for each file containing chart
-	mod_data=clean_data(data)
+    mod_data=clean_data(data)
     modules=mod_data[0]
     label=mod_data[1]
     value=mod_data[2] 
