@@ -4,30 +4,63 @@ import sys
 ### Step 1 : Get document and model
 
 def read_sbml(file):
-    """
+  """
   return model of SBML file 
-    """
-    document = libsbml.readSBML(file)
-    if document.getNumErrors() > 0:
-      print("ERROR : \"", file, '\" is not SBML file')
-      document.printErrors()
-      sys.exit()
-    else:
-      return document
+  
+  args: 
+    file (str): name of one file "path/name.xml"
+
+  return:
+    the SBMLDocument in the file
+  """
+  document = libsbml.readSBML(file)
+  if document.getNumErrors() > 0:
+    print("ERROR : \"", file, '\" is not SBML file')
+    document.printErrors()
+    sys.exit()
+  else:
+    return document
       
 def get_model(document):
-    model = document.getModel()
-    return model
+  '''
+  get the model from the SBMLDocument
+
+  args:
+    document (libsbml.SBMLDocument)
+
+  return:
+    the model from the SBMLDocument
+  '''
+  model = document.getModel()
+  return model
 
 ## Step 2 : Define Id for one organism
 
 def get_Id_organism(model):
+  '''
+  get the ID of the organism from the model
+
+  args:
+    model ()
+
+  return:
+    the ID of the organism
+  '''
   Id = model.getId()
   return Id
 
 ## Step 3 :  Get each object
 
 def get_ListOfFunctionDefinitions(model):
+  '''
+  get the component ListOfFunctionDefinitions from the model
+
+  args:
+    model ()
+
+  return:
+    component ListOfFunctionDefinition from the model
+  '''
   ListOfFunctionDefinitions = model.getListOfFunctionDefinitions()
   return ListOfFunctionDefinitions
 
@@ -35,8 +68,8 @@ def get_ListOfUnitDefinitions(model):
   return model.getListOfUnitDefinitions()
 
 def get_ListOfCompartments(model):
-    ListOfCompartments = model.getListOfCompartments()
-    return ListOfCompartments
+  ListOfCompartments = model.getListOfCompartments()
+  return ListOfCompartments
 
 def get_listOfSpecies(model):
   ListOfSpecies = model.getListOfSpecies()
@@ -47,8 +80,8 @@ def get_ListOfParameters(model):
   return ListOfParameters
 
 def get_ListOfReactions(model):
-    ListOfReactions = model.getListOfReactions()
-    return ListOfReactions
+  ListOfReactions = model.getListOfReactions()
+  return ListOfReactions
   
 def get_ListOfReactants(model):
     ListOfReactants = model.getListOfReactants()
@@ -61,11 +94,30 @@ def get_ListOfProducts(model):
 ## Step 4 : Modify Id in a model
 
 def shorten_Id(Id):
+  '''
+  selects the end ID of the ID of the organism to make ID shorter 
+
+  args:
+    Id (str)
+
+  return:
+    the end of the organism's ID
+  '''
   IdList = Id.split("_")
   Id = IdList[-1]
   return Id
 
 def set_UnitDefinitionIds(model, ShortIdOrganism):
+  '''
+  changes the ID of the component UnitDefinition
+
+  args:
+    model ()
+    ShortIdOrganism (str)
+
+  return:
+    the model with new ID of component UnitDefinition
+  '''
   ListOfUnitDefinitions = get_ListOfUnitDefinitions(model)
   for unitDefinition in ListOfUnitDefinitions:
     id = unitDefinition.getIdAttribute()
@@ -106,6 +158,15 @@ def set_ReactionsIds(model, ShortIdOrganism):
   return model
 
 def modify_Id(model):
+  '''
+  modify the IDs af all components in model
+
+  args:
+    model ()
+
+  return:
+    the model with new IDs for each component
+  '''
   Id = get_Id_organism(model)
   ShortId = shorten_Id(Id)
   model = set_UnitDefinitionIds(model, ShortId)
@@ -120,6 +181,12 @@ def modify_Id(model):
 from libsbml import *
 
 def main_sbml(fileList):
+  '''
+  create one SBML document with all organisms given by user
+
+  args:
+    fileList (list)
+  '''
   print("Execution in progress ...")
   
   document=SBMLDocument(3,1)
