@@ -23,6 +23,15 @@ def get_name_org(f):
 ### Step 2 :  clean data
 
 def clean_data(data):
+    """
+    processes data
+
+    args:
+        data (dic): {org1:{modules:value}, }
+
+    return:
+        list [modules,label,values]
+    """
     all_org=list(data.items())
     modules=list(all_org[0][1].keys())
     i=1

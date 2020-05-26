@@ -44,7 +44,7 @@ def create_pdf(charts):
     for i in range(len(charts)):
         title=charts[i][0]
         title=title.split('_')
-#        print(title)
+
         if i%2==0 and len(title)>2:
             text.append(Paragraph(title[1]+' ' +title[2], stylesH))
             text.append(Spacer(0*cm,0.5*cm))

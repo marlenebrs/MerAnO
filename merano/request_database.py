@@ -139,11 +139,24 @@ def read_text(module,text):
         ## 1.5 Update JSON function when id not in json file
 
 def write_json(data):
+    """
+    write json file
+
+    args:
+        data (str): text to puin json file
+    """
     f= open("Storage/modules.json",'w')
     json.dump(data, f, indent=4)
     f.close()
 
 def update_json(liste):
+    """
+    update (add arg in) json file
+
+    args:
+        liste (str): [pathways, name, id]
+
+    """
     dico_modules = {}
     dico_modules['ID'] = liste[4]
     dico_modules['name'] = liste[3]
