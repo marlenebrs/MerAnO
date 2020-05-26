@@ -28,15 +28,21 @@ def make_multiple_barplot(modules,label,value):
     width=0.8
     #fig, ax = plt.subplots()
     n=len(value)
+    fig, ax = plt.subplots(figsize=(10,8))
     for i in range(n):
         plt.bar(x - width/2. + i/float(n)*width, value[i], 
                 width=width/float(n), align="edge", label=label[i])
-
+        for idx,rect in enumerate(bar_plot):
+            height = rect.get_height()
+            ax.text(rect.get_x() + rect.get_width()/2., 1*height,value[i][idx],
+                    ha='center', va='bottom', rotation=0,fontsize=7)
     
     plt.xticks(x,modules,rotation=45,horizontalalignment='right',fontweight='light')
     plt.title('Division of metabolisms within the bacteria')
+    plt.xlabel('Modules present in the bacteria\'s metabolism')
+    plt.ylabel('Occurences of the modules within the bacteria metabolism')
     plt.tight_layout()
-    plt.legend()
+    plt.legend(label)
     name='multiple_barplot'
     plt.savefig('./Results/'+name, format='png')
     plt.close()
@@ -62,6 +68,11 @@ def make_barplot(modules,label,value):
 
     plt.bar(x , value,width, align="edge", label=label)
     plt.xticks(x,modules,rotation=45,horizontalalignment='right',fontweight='light')
+    fig, ax = plt.subplots(figsize=(10,8))
+    for idx,rect in enumerate(bar_plot):
+        height = rect.get_height()
+        ax.text(rect.get_x() + rect.get_width()/2., 1*height,value[idx],
+                ha='center', va='bottom', rotation=0)
     plt.title('Division of metabolisms within ' + label)
     plt.tight_layout()
     plt.legend()
@@ -100,10 +111,11 @@ def make_pie(module,label,value):
         horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
         connectionstyle = "angle,angleA=0,angleB={}".format(ang)
         kw["arrowprops"].update({"connectionstyle": connectionstyle})
-        ax.annotate(['{1:1.2f} %'.format(v,n) for v,n in zip(modules, percent)][i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),horizontalalignment=horizontalalignment, **kw)
+        ax.annotate(['{0} - {1:1.2f} %'.format(v,n) for v,n in zip(modules, percent)][i], xy=(x, y), 
+                    xytext=((i/10)+0.2*np.sign(x), 1.3*y),horizontalalignment=horizontalalignment, **kw)
 
     ax.set_title('Division of metabolisms within '+label)
-    plt.legend(modules, bbox_to_anchor=(2,0), loc="lower left", bbox_transform=plt.gcf().transFigure)
+    #plt.legend(modules, bbox_to_anchor=(2,0), loc="lower left", bbox_transform=plt.gcf().transFigure)
     name=('pie_'+label)
     plt.savefig('./Results/'+ name, format='png')
     plt.close()
