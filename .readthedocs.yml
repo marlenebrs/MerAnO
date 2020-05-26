@@ -11,7 +11,7 @@ sphinx:
 
 # Use conda to install biopython (requiring numpy, a C dependent package).
 conda:
-  environment: docs/environment.yml
+  environment: docs/source/environment.yml
 
 # Optionally set the version of Python and requirements required to build your docs
 python:
