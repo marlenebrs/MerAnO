@@ -31,7 +31,7 @@ setup(
                             'Operating System :: Unix',
                         ],
     packages=["merano"],
-    packages_dir = {'merano' : 'merano'}
+    packages_dir = {'merano' : 'merano'},
     install_requires=["matplotlib==3.2.1","pandas==1.0.3","python-libsbml==5.18.0","reportlab==3.5.42","requests==2.23.0"],
     entry_points={
         'console_scripts': [
