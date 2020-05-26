@@ -61,3 +61,11 @@ def clean_data(data):
         
         value.append(value_org)
     return [modules, label, value]
+
+def get_data_org(data):
+    modules=[]
+    values=[]
+    for key in data.keys():
+        modules.append(key)
+        values.append(data[key])
+    return [modules,values]
