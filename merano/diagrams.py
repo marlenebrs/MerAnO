@@ -13,6 +13,17 @@ import pylab as plt
 ### 1 - Barplot to compare organism
 
 def make_multiple_barplot(modules,label,value):
+    """
+    Make multiple barplot
+
+    args:
+        modules (list): modules' name
+        label (list) : organism's name
+        value (list) :values for each modules for each organism
+
+    return:
+        list [name,description]
+    """
     x=np.arange(len(modules))
     width=0.8
     #fig, ax = plt.subplots()
@@ -35,6 +46,17 @@ def make_multiple_barplot(modules,label,value):
 ### 2 - Barplot for one organism
 
 def make_barplot(modules,label,value):
+    """
+    Make barplot
+
+    args:
+        modules (list): modules' name
+        label (list) : organism's name
+        value (list) :values for each modules for one organism
+
+    return:
+        list [name,description]
+    """
     x=np.arange(len(modules))
     width=0.8
 
@@ -52,6 +74,17 @@ def make_barplot(modules,label,value):
 ### 3 - Pie chart represente proportion of modules in a organism
 
 def make_pie(module,label,value):
+    """
+    Make pie
+
+    args:
+        modules (list): modules' name
+        label (list) : organism's name
+        value (list) :values for each modules for one organism
+
+    return:
+        list [name,description]
+    """
     modules=np.array(module)
     values=np.array(value)
     fig, ax=plt.subplots(subplot_kw=dict(aspect='equal')) # Equal aspect ratio ensures the pie chart is circular.
