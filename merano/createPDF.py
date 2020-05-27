@@ -5,11 +5,12 @@
 
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import cm
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import Image
 from reportlab.platypus import PageBreak
+from reportlab.lib import colors
 
 
 
@@ -35,10 +36,17 @@ def create_pdf(charts):
 
     doc = SimpleDocTemplate("./Results/Report.pdf", pagesize=A4)
 
+    table=Table(tab)
+    style=TableStyle([('ALIGN',(0,0),(-1,-1),'CENTER')])
+    ts=TableStyle([('BOX',(0,0),(-1,-1),2,colors.black),('GRID',(0,0),(-1,-1),2,colors.black)])
+    table.setStyle(ts)
+    table.setStyle(style)
 
     text = []
     text.append(Paragraph("Analyses of organism's pathways", stylesT))
     text.append(Spacer(0*cm,2*cm))
+    text.append(table)
+    text.append (PageBreak())
     comparison=0
     for i in range(len(charts)):
         title=charts[i][0]
