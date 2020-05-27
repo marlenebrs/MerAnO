@@ -32,7 +32,7 @@ def make_multiple_barplot(modules,label,value):
     n=len(value)
     fig, ax = plt.subplots(figsize=(10,8))
     for i in range(n):
-        plt.bar(x - width/2. + i/float(n)*width, value[i], 
+        bar_plot=plt.bar(x - width/2. + i/float(n)*width, value[i], 
                 width=width/float(n), align="edge", label=label[i])
         for idx,rect in enumerate(bar_plot):
             height = rect.get_height()
@@ -70,7 +70,7 @@ def make_barplot(modules,label,value):
     x=np.arange(len(modules))
     width=0.8
 
-    plt.bar(x , value,width, align="edge", label=label)
+    bar_plot=plt.bar(x , value,width, align="edge", label=label)
     plt.xticks(x,modules,rotation=45,horizontalalignment='right',fontweight='light')
     fig, ax = plt.subplots(figsize=(10,8))
     for idx,rect in enumerate(bar_plot):
