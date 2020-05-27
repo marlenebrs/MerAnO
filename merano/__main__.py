@@ -28,17 +28,28 @@ def main():
     
     if not os.path.exists('Results'):
         os.makedirs('Results') 
+    
+    else:
+        continue
 
-    if SBML_files != None:
+    if SBML_files >= 2:
         main_sbml(SBML_files)
         create_info(SBML_files)
-    elif annotation_files != None:  
+    elif annotation_files != None and annotation_files < 6 :  
         if not os.path.exists('Storage'):
             os.makedirs('Storage')    
         if not os.path.isfile('Storage/modules.json'):
             with open("Storage/modules.json", mode='w') as f:
                 f.write(json.dumps([], indent=4))    
         main_analysis(annotation_files)
+    else:
+        print("""
+        Please put the authorized number of files :
+            - More than 2 for merge option
+            or 
+            - Between 1 and 5 for analyze option
+        """)
+    
 
     
     
