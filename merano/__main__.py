@@ -1,6 +1,7 @@
 import os
 import argparse
 import sys
+from merge_SBML import main_sbml
 from main_annotation import main_analysis
 from info_SBML import create_info
 import json
