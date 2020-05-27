@@ -8,7 +8,7 @@ import libsbml
 
 from merano import main_sbml, read_sbml
 #from merano import main_analysis
-from merano import make_dict
+from merano import read_text
 from merano import get_name_org
 
 def test_filetype(filename, filetype):
