@@ -1,7 +1,8 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
-from request_database import list_modules
+from merano.request_database import list_modules
+
 import requests
 
 def get_name_org(f):
@@ -102,10 +103,7 @@ def info_data(files,label,value):
     percentage = []
     total=[]
     name=[]
-    print(len(label))
     for o in range(len(label)):
-        print(o)
-        print(label[o])
         l=label[o]
         l=l.split('_')
         l=(l[0] + " "+ l[1])

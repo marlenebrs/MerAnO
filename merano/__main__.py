@@ -29,13 +29,11 @@ def main():
     if not os.path.exists('Results'):
         os.makedirs('Results') 
     
-    else:
-        continue
 
-    if SBML_files >= 2:
+    if SBML_files != None and len(SBML_files)>=2:
         main_sbml(SBML_files)
         create_info(SBML_files)
-    elif annotation_files != None and annotation_files < 6 :  
+    elif annotation_files != None and len(annotation_files) < 6 :  
         if not os.path.exists('Storage'):
             os.makedirs('Storage')    
         if not os.path.isfile('Storage/modules.json'):

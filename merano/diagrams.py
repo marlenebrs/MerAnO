@@ -121,7 +121,7 @@ def make_pie(module,label,value):
         connectionstyle = "angle,angleA=0,angleB={}".format(ang)
         kw["arrowprops"].update({"connectionstyle": connectionstyle})
         ax.annotate(['{0} \n {1:1.2f} %'.format(v,n) for v,n in zip(modules, percent)][i], xy=(x, y), 
-                    xytext=(1.5*np.sign(x), 1.6*y),horizontalalignment=horizontalalignment,fontsize=7 **kw)
+                    xytext=(1.5*np.sign(x), 1.6*y),horizontalalignment=horizontalalignment,fontsize=7, **kw)
 
     ax.set_title('Division of metabolisms within '+label,y=1.2)
     #plt.legend(modules, bbox_to_anchor=(2,0), loc="lower left", bbox_transform=plt.gcf().transFigure)
