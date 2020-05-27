@@ -7,7 +7,7 @@ MerAnO is a python3 package created as part of the Bioinformatics master's degre
 
 
 ## Table of contents
-- [M2M - metage2metabo](#m2m---metage2metabo)
+- [MerAnO](#merano)
   - [Table of contents](#table-of-contents)
   - [License](#license)
   - [Documentation](#documentation)
