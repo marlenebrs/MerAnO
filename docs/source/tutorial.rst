@@ -6,7 +6,7 @@ MerAnO Tutorial
 Inputs
 -------
 
-**MerAnO** program offers two axes for processing different data.
+**MerAnO**  offers two axes to process different types of data.
 Run ``merano --help`` for information about the arguments
 
 -m directory         directory of SBML files to merge
