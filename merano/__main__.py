@@ -11,8 +11,8 @@ import json
 def main():
     parser = argparse.ArgumentParser(description = "MerAnO") 
   
-    parser.add_argument("-a", "--analyse", type = str, help = "folder in which the annotations files to be processed are located.Put the path, if it's necessary") 
-    parser.add_argument("-m", "--merge", type = str, help = "folder in which the SBML files to merge are located. Put the path, if it's necessary")
+    parser.add_argument("-a", "--analyse", type = str, help = "folder in which the annotations files to be processed are located.Put the all path") 
+    parser.add_argument("-m", "--merge", type = str, help = "folder in which the SBML files to merge are located. Put the all path")
 	# parse the arguments from standard input 
     args = parser.parse_args()    
     m=args.merge
