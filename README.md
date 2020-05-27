@@ -1,4 +1,4 @@
-[![PyPI version](https://img.shields.io/pypi/v/merano?style=plastic)](https://pypi.org/project/MerAnO/) [![GitHub license](https://img.shields.io/github/license/marlenebrs/MerAnO?style=plastic)](https://github.com/marlenebrs/MerAnO/blob/master/LICENSE) [![Actions Status](https://github.com/AuReMe/metage2metabo/workflows/Python%20package/badge.svg)](https://github.com/marlenebrs/MerAnO/actions) [![Documentation Status](https://img.shields.io/readthedocs/merano/latest?style=plastic)](https://merano.readthedocs.io/en/latest/)
+[![PyPI version](https://img.shields.io/pypi/v/merano?style=plastic)](https://pypi.org/project/MerAnO/) [![GitHub license](https://img.shields.io/github/license/marlenebrs/MerAnO?style=plastic)](https://github.com/marlenebrs/MerAnO/blob/master/LICENSE) [![Documentation Status](https://img.shields.io/readthedocs/merano/latest?style=plastic)](https://merano.readthedocs.io/en/latest/)
 # MerAnO
 MerAnO is a python3 package created as part of the Bioinformatics master's degree in Bordeaux. MerAnO for "Merge & Analyze Organism" has two separate objectives.
  
@@ -39,8 +39,8 @@ pip install -r requirements.txt
 
 ## Installation
 
-Tested on Linux (???) and MacOs (version ???).
-Tested with Python3.8
+Tested on Ubuntu (version 19.04) and MacOs (version 10.15)
+Tested with Python3.8, Python 3.7
 
 ### Installation with pip
 
