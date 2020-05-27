@@ -4,6 +4,7 @@
 import pandas as pd
 import requests
 import json
+import sys
 
 ### Step 1 :  get data
 
@@ -100,7 +101,12 @@ def request_kegg(module):
     :rtype: str
     """
 
-    r = requests.get('http://rest.kegg.jp/get/%s' % module) # Returns informations on this url page 
+    try:
+        r = requests.get('http://rest.kegg.jp/get/%s' % module) # Returns informations on this url page 
+    except requests.exceptions.RequestException as e:  
+        print(" No connection available, please make sure you are connected to use analyze argument !")
+        sys.exit()
+    
     description = r.text
     return description
 

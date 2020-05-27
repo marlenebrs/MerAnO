@@ -1,20 +1,24 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
-
+"""
+createPDF.py
+========================================
+"""
 ### Import
 
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import cm
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import Image
 from reportlab.platypus import PageBreak
+from reportlab.lib import colors
 
 
 
 
-def create_pdf(charts):
+def create_pdf(charts,tab):
     """
     Create a pdf file with all charts
 
@@ -35,10 +39,30 @@ def create_pdf(charts):
 
     doc = SimpleDocTemplate("./Results/Report.pdf", pagesize=A4)
 
+    l1=['organism']
+    l2=['lost data (%)']
+    l3=['total modules analysed']
+    for i in range (len(tab[0])):
+        l1.append(tab[0][i])
+        l2.append(tab[1][i])
+        l3.append(tab[2][i])
+    
+    data=[]
+    data.append(l1)
+    data.append(l2)
+    data.append(l3)
+    table=Table(data)
+
+    style=TableStyle([('ALIGN',(0,0),(-1,-1),'CENTER')])
+    ts=TableStyle([('BOX',(0,0),(-1,-1),2,colors.black),('GRID',(0,0),(-1,-1),2,colors.black)])
+    table.setStyle(ts)
+    table.setStyle(style)
 
     text = []
     text.append(Paragraph("Analyses of organism's pathways", stylesT))
     text.append(Spacer(0*cm,2*cm))
+    text.append(table)
+    text.append (PageBreak())
     comparison=0
     for i in range(len(charts)):
         title=charts[i][0]

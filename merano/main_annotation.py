@@ -47,7 +47,9 @@ def main_analysis(files):
 
     tmp=make_multiple_barplot(modules,label,value)  # create multiple chart
     info.append(tmp)
-    create_pdf(info)        # create pdf
+    tab=info_data(files,label,value)
+    
+    create_pdf(info,tab)        # create pdf
     print("Execution ok ... output files are in directory named \"Results\"")
 
 

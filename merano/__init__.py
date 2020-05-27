@@ -1,4 +1,5 @@
-from merano.request_database import read_text,request_kegg
+from merano.request_database import read_text
+from merano.request_database import request_kegg
 from merano.data_processing import get_name_org
 from merano.merge_SBML import main_sbml, read_sbml
 
