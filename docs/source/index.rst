@@ -23,7 +23,8 @@ Documentation of MerAnO
     :maxdepth: 2
     
 
-
+    install
+    tutorial
     api
 
 

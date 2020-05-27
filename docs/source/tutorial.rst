@@ -13,18 +13,21 @@ Run ``merano --help`` for knowing the arguments
 -a directory         directory of annotations files
 
 
-Whichever option is chosen, the full directory path must be mentioned. The latter must contain exclusively files in format ``.xml`` if you take the "merge" option and in format``.fa.emapper.annotation`` if you take the "anayze" option.
+Whichever option is chosen, the full directory path must be mentioned. The latter must contain exclusively files in format ``.xml`` if you take the "merge" option and in format ``.fa.emapper.annotation`` if you take the "anayze" option.
 
 File format
 -----------
 
 
-Regarding the merging of SMBL files, inputs must conform to the SBML files regardless of this version. The format is in `` .xml``
+Regarding the merging of SMBL files, inputs must conform to the SBML files regardless of this version. 
+The format is in ``.xml``
 
 For annotation files, format is ``.fa.emapper.annotation``
 
 Filename
 ---------
+
+To have better results, it's important to check your filename. This is how you must named it :
 - SBML files
 
 	*Genre_species_id.xml*
@@ -43,10 +46,11 @@ MerAnO create a JSON file named modules.json and put it in Storage directory. To
 - Results
 
 The program creates a "Results" directory and places the output files in it.
+
 * When using the "merge" argument, files are created: 
 
-	* `` info.txt`` containing some information by organization.
-	* `` merged_sbml.xml`` corresponding to merged files
+	* ``info.txt`` containing some information by organization.
+	* ``merged_sbml.xml`` corresponding to merged files
 
 * When using the "analyze" argument, files are created:
 	
