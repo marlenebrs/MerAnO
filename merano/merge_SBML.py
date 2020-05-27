@@ -1,5 +1,6 @@
 import libsbml
 import sys
+from info_SBML import create_info
 
 ### Step 1 : Get document and model
 
@@ -244,5 +245,6 @@ def main_sbml(fileList):
     fileModel = modify_Id(fileModel)
     model.appendFrom(fileModel)
   writeSBML(document, "Results/merged_sbml.xml")
+  create_info(fileList)
 
 
