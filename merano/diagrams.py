@@ -57,7 +57,7 @@ def make_barplot(modules,label,value):
     """
     Make barplot
 
-    :param modules: modules name
+    :param modules: modules' name
     :type modules: list
     :param label: organism's name
     :type label: list
@@ -69,18 +69,18 @@ def make_barplot(modules,label,value):
     """
     x=np.arange(len(modules))
     width=0.8
-
-    fig, ax = plt.subplots(figsize=(10,8))
-    bar_plot=plt.bar(x , value,width, align="edge")
     
+    fig, ax = plt.subplots()
+    bar_plot=plt.bar(x,value,width, align="edge")
     for idx,rect in enumerate(bar_plot):
         height = rect.get_height()
         ax.text(rect.get_x() + rect.get_width()/2., 1*height,value[idx],
-                ha='center', va='bottom', rotation=0,fontsize=8)
+                ha='center', va='bottom', rotation=0, fontsize=8)
         plt.xticks(x,modules,rotation=45,horizontalalignment='right',fontweight='light',fontsize=7)
+    
     plt.title('Division of metabolisms within ' + label)
     plt.xlabel('Modules present in the bacteria\'s metabolism')
-    plt.ylabel('Occurences of the modules within the bacteria metabolism')
+    plt.ylabel('Occurences of the modules \n within the bacteria metabolism')
     plt.tight_layout()
     name=('barplot_'+label)
     plt.savefig('./Results/'+name, format='png')
