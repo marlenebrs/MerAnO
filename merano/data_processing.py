@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
-
+from request_database import list_modules
 
 def get_name_org(f):
     """
@@ -78,3 +78,46 @@ def get_data_org(data):
         modules.append(key)
         values.append(data[key])
     return [modules,values]
+
+def info_data(files,label,value):
+    """
+    
+    percentage of loss and total of modules
+
+    :param files: annotation files
+    :type files: list 
+
+    :param label: name of organism
+    :type label: list
+
+    :param value: total for each module
+    :type value: list
+
+    :return: list [label, percentage, total]
+    :rtype: list
+    """
+    tab=[]
+    percentage = []
+    total=[]
+    name=[]
+    print(len(label))
+    for o in range(len(label)):
+        print(o)
+        print(label[o])
+        l=label[o]
+        l=l.split('_')
+        l=(l[0] + " "+ l[1])
+        
+        t=sum(value[o])
+
+        len_id_modules = len(list_modules(files[o]))
+            
+        pct = t / len_id_modules * 100
+        pct = 100 - pct
+        name.append(l)
+        total.append(t)
+        percentage.append(pct)
+
+    tab=[name, percentage, total]
+
+    return tab
