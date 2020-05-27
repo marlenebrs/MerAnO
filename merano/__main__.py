@@ -31,6 +31,7 @@ def main():
 
     if SBML_files != None:
         main_sbml(SBML_files)
+        create_info(fileList)
     elif annotation_files != None:  
         if not os.path.exists('Storage'):
             os.makedirs('Storage')    

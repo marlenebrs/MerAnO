@@ -245,6 +245,5 @@ def main_sbml(fileList):
     fileModel = modify_Id(fileModel)
     model.appendFrom(fileModel)
   writeSBML(document, "Results/merged_sbml.xml")
-  create_info(fileList)
 
 
