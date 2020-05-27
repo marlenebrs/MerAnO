@@ -2,6 +2,7 @@
 #-*- coding: utf-8 -*-
 
 from request_database import list_modules
+import requests
 
 def get_name_org(f):
     """
