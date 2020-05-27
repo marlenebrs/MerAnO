@@ -18,8 +18,7 @@ def create_pdf(charts):
     """
     Create a pdf file with all charts
 
-    Args:
-        charts (list) : contain path and description for all charts
+    :param charts: contain path and description for all charts
     
     """
     styles = getSampleStyleSheet()

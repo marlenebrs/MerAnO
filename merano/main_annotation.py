@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
-from data_processing import *
+from data_processing import*
 from request_database import make_dict
 from diagrams import*
 from createPDF import create_pdf
@@ -20,8 +20,8 @@ def main_analysis(files):
     """
     run analyses part
 
-    Args:
-        files (list) : files to process
+    :param files: files to process
+    :type files: list
     """
     print("Execution in progress...Can take more than 10 minutes")
     data={}

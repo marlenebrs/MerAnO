@@ -13,11 +13,11 @@ def list_medium_module(f):
     """
     get "medium" modules
 
-    args:
-        f (str): filename
+    :param f: filename
+    :type f: str
 
-    return:
-        list of medium modules which  be request
+    :return: list of medium modules which be request
+    :rtype: list
     """
     modules_list = list_modules(f)
 
@@ -44,12 +44,12 @@ def list_medium_module(f):
 def list_modules(f):
     """
     get list of id module in annotation's file
-
-    args:
-        f (str): filename
     
-    return:
-        list of modules' id
+    :param f: filename
+    :type f: str
+
+    :return: list of modules' id
+    :rtype: list
     """
 
     csv = pd.read_csv(f, sep="\t", header=3, usecols=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16])
@@ -71,12 +71,12 @@ def list_modules(f):
 def check_json(id):
     """
     find id in Json file
+    
+    :param id: module identifiant
+    :type id: str
 
-    args:
-        id (str)
-
-    return:
-        name of medium class if id in json file
+    :return: name of medium class if id in json file
+    :rtype: str
     """
     new=open('Storage/modules.json')
     load=json.load(new)
@@ -92,12 +92,12 @@ def check_json(id):
 def request_kegg(module):         
     """
     request kegg (database)
+    
+    :param module: module identifiant
+    :type module: str
 
-    args:
-        module (str) : id of a module
-
-    return:
-        text from url page (str)
+    :return: text from url page (str)
+    :rtype: str
     """
 
     r = requests.get('http://rest.kegg.jp/get/%s' % module) # Returns informations on this url page 
@@ -107,12 +107,15 @@ def request_kegg(module):
 def read_text(module,text):  
     """  
     processing of the variable obtained with the request
+    
+    :param module: module identifiant
+    :type module: str
+    
+    :param text: return of request_kegg()
+    :type text: str
 
-    args:
-        module (str) : id
-        text (str) : return of request_kegg()
-    return:
-        list of str: [Class (3), module's name, id]
+    :return: list of str: [Class (3), module's name, id]
+    :rtype: list
     """        
     t = text.split("\n")
     value = str
@@ -142,8 +145,8 @@ def write_json(data):
     """
     write json file
 
-    args:
-        data (str): text to puin json file
+    :param data: text to put in json file
+    :type data: str
     """
     f= open("Storage/modules.json",'w')
     json.dump(data, f, indent=4)
@@ -152,10 +155,9 @@ def write_json(data):
 def update_json(liste):
     """
     update (add arg in) json file
-
-    args:
-        liste (str): [pathways, name, id]
-
+    
+    :param liste: liste (str): [pathways, name, id]
+    :type liste: list
     """
     dico_modules = {}
     dico_modules['ID'] = liste[4]
@@ -177,12 +179,12 @@ def update_json(liste):
 def make_dict(f):
     """
     sort data in a dictionnary
-
-    args:
-        f (str): filename
     
-    return 
-        {module: nb}
+    :param f: filename
+    :type f: str
+
+    :return: dict of modules and occurrences {module: nb}
+    :rtype: dict
     """
     l=list_medium_module(f)
     data={}.fromkeys(l,0) #l is for the list and 0 initiate all the keys values

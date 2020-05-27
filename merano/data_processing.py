@@ -6,11 +6,11 @@ def get_name_org(f):
     """
     get name of each organism with filename
 
-    args: 
-        f (str): name of one file "path/name.fa.emapper.annotation"
-    
-    return:
-        organism's name
+    :param f: name of one file "path/name.fa.emapper.annotation"
+    :type f: str
+
+    :return: organism's name
+    :rtype: str
     """
     name = f.split(".")
     name = name[0]
@@ -26,11 +26,11 @@ def clean_data(data):
     """
     processes data
 
-    args:
-        data (dic): {org1:{modules:value}, }
+    :param data: dictionnary with organism's name, modules and values
+    :type data: dict
 
-    return:
-        list [modules,label,values]
+    :return: list [modules,label,values]
+    :rtype: list
     """
     all_org=list(data.items())
     modules=list(all_org[0][1].keys())
@@ -63,6 +63,15 @@ def clean_data(data):
     return [modules, label, value]
 
 def get_data_org(data):
+    """
+    processes data to get values for one organism
+
+    :param data: dictionnary with organism's name, modules and values
+    :type data: dict
+
+    :return: list [modules,values]
+    :rtype: list
+    """
     modules=[]
     values=[]
     for key in data.keys():
