@@ -30,7 +30,7 @@ A more detailled documentation is available at: [https://merano.readthedocs.io](
 
 ## Technologies
 
-Python 3 (Python 3.8 is tested). MerAnO uses a certain number of Python dependencies. A list of the dependencies working for MacOs (version ???) and Linus (???) is available in [requirements.txt](https://github.com/marlenebrs/MerAnO/blob/master/requirements.txt).
+Python 3 (Python 3.8-3.7 are tested). MerAnO uses a certain number of Python dependencies. A list of the dependencies working for MacOs (version 10.15) and Ubuntu (version 19.04) is available in [requirements.txt](https://github.com/marlenebrs/MerAnO/blob/master/requirements.txt).
 
 They can be installed with:
 ````sh
