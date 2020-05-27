@@ -36,7 +36,20 @@ def create_pdf(charts,tab):
 
     doc = SimpleDocTemplate("./Results/Report.pdf", pagesize=A4)
 
-    table=Table(tab)
+    l1=['organism']
+    l2=['lost data (%)']
+    l3=['total modules analysed']
+    for i in range (len(tab[0])):
+        l1.append(tab[0][i])
+        l2.append(tab[1][i])
+        l3.append(tab[2][i])
+    
+    data=[]
+    data.append(l1)
+    data.append(l2)
+    data.append(l3)
+    table=Table(data)
+
     style=TableStyle([('ALIGN',(0,0),(-1,-1),'CENTER')])
     ts=TableStyle([('BOX',(0,0),(-1,-1),2,colors.black),('GRID',(0,0),(-1,-1),2,colors.black)])
     table.setStyle(ts)
