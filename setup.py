@@ -22,7 +22,12 @@ setup(
              "Paardekooper Marieke",
              ],
 
-    author_email=["celinemathez@gmail.com"],
+    author_email=[
+                    "marie.ancelle@wanadoo.fr",
+                    "marlene64.barus@gmail.com",
+                    "mathildeborg@yahoo.com",
+                    "celinemathez@gmail.com",
+                    "mariepaarde@gmail.com"],
     license="GPLv3+",
     classifiers      =[
                             'Programming Language :: Python :: 3.7',
