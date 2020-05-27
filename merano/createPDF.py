@@ -15,7 +15,7 @@ from reportlab.lib import colors
 
 
 
-def create_pdf(charts):
+def create_pdf(charts,tab):
     """
     Create a pdf file with all charts
 
