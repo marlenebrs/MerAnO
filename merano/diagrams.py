@@ -16,11 +16,11 @@ def make_multiple_barplot(modules,label,value):
     """
     Make multiple barplot
 
-    :param modules: modules' name
+    :param modules: modules name
     :type modules: list
     :param label: organism's name
     :type label: list
-    :param value: values for each modules for each organism
+    :param value: values for each module for each organism
     :type value: list
 
     :return: name and description of chart
@@ -48,7 +48,7 @@ def make_multiple_barplot(modules,label,value):
     name='multiple_barplot'
     plt.savefig('./Results/'+name, format='png')
     plt.close()
-    description='Comparaison of presence of modules in each organismes'
+    description='Comparison of modules presence in each organism. The y axis corresponds to the occurences of the modules within the bacterias metabolisms. The x axis corresponds to the modules present in the bacteria\'s metabolisms'
     return [name,description]
 
 ### 2 - Barplot for one organism
@@ -57,11 +57,11 @@ def make_barplot(modules,label,value):
     """
     Make barplot
 
-    :param modules: modules' name
+    :param modules: modules name
     :type modules: list
     :param label: organism's name
     :type label: list
-    :param value: values for each modules for one organism
+    :param value: values for each module for one organism
     :type value: list
 
     :return: name and description of chart
@@ -80,10 +80,12 @@ def make_barplot(modules,label,value):
     plt.title('Division of metabolisms within ' + label)
     plt.tight_layout()
     plt.legend()
+    plt.xlabel('Modules present in the bacteria\'s metabolism')
+    plt.ylabel('Occurences of the modules within the bacteria metabolism')
     name=('barplot_'+label)
     plt.savefig('./Results/'+name, format='png')
     plt.close()
-    description=('Barplot illustrating the size of each module present in '+label)
+    description=('Barplot illustrating the proportion of each module present in '+label+'. The y axis corresponds to the occurences of the modules within the bacteria metabolism. The x axis corresponds to the modules present in the bacteria\'s metabolism')
     return [name,description]
 
 ### 3 - Pie chart represente proportion of modules in a organism
@@ -92,11 +94,11 @@ def make_pie(module,label,value):
     """
     Make pie
 
-    :param modules: modules' name
+    :param modules: modules name
     :type modules: list
     :param label: organism's name
     :type label: list
-    :param value: values for each modules for one organism
+    :param value: values for each module for one organism
     :type value: list
 
     :return: name and description of chart
@@ -125,6 +127,6 @@ def make_pie(module,label,value):
     name=('pie_'+label)
     plt.savefig('./Results/'+ name, format='png')
     plt.close()
-    description=('Pie chart illustrating the percent of each module present in '+label)
+    description=('Pie chart illustrating the percentage of each module present in '+label)
     return [name,description]
     
