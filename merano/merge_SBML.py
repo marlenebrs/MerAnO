@@ -1,6 +1,6 @@
 import libsbml
 import sys
-from info_SBML import create_info
+
 
 ### Step 1 : Get document and model
 
