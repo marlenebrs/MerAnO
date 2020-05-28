@@ -38,8 +38,7 @@ Acknowledgement
 ===============
 
 
-**Clémence frioux** (Inria, Bordeaux) for having proposed this project to us as part of our master. And for his support which was formativeClémence frioux for proposing this project to us for . And for his support which was formative
-
+**Clémence Frioux** (inria, Bordeaux) for suggesting this project as a part of our master's program and for her highly formative support throughout the project.
 
 Indices and tables
 ==================
