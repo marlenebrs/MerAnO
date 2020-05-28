@@ -1,6 +1,6 @@
 import libsbml
 
-from merge_SBML import read_sbml, get_model, get_Id_organism, get_listOfSpecies, get_ListOfReactions
+from merano.merge_SBML import read_sbml, get_model, get_Id_organism, get_listOfSpecies, get_ListOfReactions
 
 def get_statistics(textfile, filename):
     """ get number of species and reactions of organism
