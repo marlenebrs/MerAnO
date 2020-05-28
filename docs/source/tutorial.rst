@@ -23,7 +23,7 @@ To run this program you can choose either one or both options, however at least 
  * annotation files analyze :
 	The directory must exclusively contain files in ``.fa.emapper.annotation`` format.
 	
-	Between 1 and 5 files must be in the directory. 
+	Between 2 and 5 files must be in the directory. 
 
 File format
 -----------
