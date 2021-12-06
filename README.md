@@ -81,7 +81,7 @@ Changes between version are listed on the [release page](https://github.com/marl
 
 
 ## Authors
-[Marie Ancelle](https://github.com/Marie-Ancelle), [Marlène Barus](https://github.com/marlenebrs), [Mathilde Borg](https://github.com/mathildeborg), [Céline Mathez](https://github.com/cmathez) and [Marieke Paardekooper](https://github.com/MariekeLP), Univ Bordeaux, Master Bioinformatique, du Génome aux Ecosystemes, Bordeaux, France.
+[Marie Ancelle](https://github.com/MarieAncelle), [Marlène Barus](https://github.com/marlenebrs), [Mathilde Borg](https://github.com/mathildeborg), [Céline Mathez](https://github.com/cmathez) and [Marieke Paardekooper](https://github.com/MariekeLP), Univ Bordeaux, Master Bioinformatique, du Génome aux Ecosystemes, Bordeaux, France.
 
 ## Acknowledgement
 **Clémence Frioux** (inria, Bordeaux) for suggesting this project as a part of our master's program and for her highly formative support throughout the project.
